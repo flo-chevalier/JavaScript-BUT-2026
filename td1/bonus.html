@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>exo1</title>
+</head>
+
+<body>
+    <h1>Bonus</h1>
+
+    <ul id="ma-liste">
+        <li>John Doe</li>
+        <li>Jane Doe</li>
+    </ul>
+
+    <form id="formulaire">
+        <input type="text" id="nouvel-element">
+        <input type="submit" value="Ajouter">
+    </form>
+
+
+    <script type="text/javascript">
+        document.querySelector('#formulaire').onsubmit = (event) => {
+            event.preventDefault();
+            let nouvelElement = document.getElementById('nouvel-element').value;
+            console.log(nouvelElement);
+            let liste = document.getElementById('ma-liste');
+            let nouvelElementLi = document.createElement('li');
+            nouvelElementLi.innerText = nouvelElement;
+            liste.appendChild(nouvelElementLi);
+            document.getElementById('nouvel-element').value = '';
+        }
+    </script>
+</body>
+</html>
